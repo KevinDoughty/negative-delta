@@ -196,20 +196,8 @@ function secondOrderResponse(omega,zeta,position) {
 	zeta *= 1.0;
 	position *= 1.0;
 	//  http://www.cocoawithlove.com/2008/09/parametric-acceleration-curves-in-core.html
-    //
-    //  Evaluate.m
-    //  AnimationAcceleration
-    //
-    //  Created by Matt Gallagher on 8/09/08.
-    //  Copyright 2008 Matt Gallagher. All rights reserved.
-    //
-    //  Permission is given to use this source code file without charge in any
-    //  project, commercial or otherwise, entirely at your risk, with the condition
-    //  that any redistribution (in part or whole) of source code must retain
-    //  this copyright and permission notice. Attribution in compiled projects is
-    //  appreciated but not required.
-    //
-    var beta = Math.sqrt(1.0 - zeta * zeta);
-    var value = 1.0 / beta * Math.exp(-zeta * omega * position) * Math.sin(beta * omega * position + Math.atan(beta / zeta));
+	//  Matt Gallagher graciously offered the non-exclusive right to use the following code from the CocoaWithLove AnimationAcceleration project without attribution:
+    	var beta = Math.sqrt(1.0 - zeta * zeta);
+    	var value = 1.0 / beta * Math.exp(-zeta * omega * position) * Math.sin(beta * omega * position + Math.atan(beta / zeta));
 	return value;
 }
